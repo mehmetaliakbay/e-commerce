@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ecommerce
+
+logging:
+  level:
+    ROOT: DEBUG
+    org.hibernate.SQL: DEBUG
+    com.difransel.ecommerce: DEBUG
