@@ -34,7 +34,7 @@ public class MessageResource {
 
     private static final String ENTITY_NAME = "message";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final MessageService messageService;

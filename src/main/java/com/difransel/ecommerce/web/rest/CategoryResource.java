@@ -34,7 +34,7 @@ public class CategoryResource {
 
     private static final String ENTITY_NAME = "category";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final CategoryService categoryService;

@@ -29,7 +29,7 @@ public class OrderProductResource {
 
     private static final String ENTITY_NAME = "orderProduct";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final OrderProductService orderProductService;

@@ -1,5 +1,6 @@
 package com.difransel.ecommerce.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,17 +10,19 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * A Message.
+ * A User.
  */
 @Getter
 @Setter
 @ToString
 @Entity
-@Table(name = "message")
+@Table(name = "user_account")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Message implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,23 +35,20 @@ public class Message implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "surname")
+    private String surname;
+
     @Column(name = "email")
     private String email;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "password")
+    private String password;
 
-    @Column(name = "subject")
-    private String subject;
-
-    @Column(name = "message")
-    private String message;
-
-    @Column(name = "ip")
-    private String ip;
+    @Column(name = "role")
+    private String role;
 
     @Column(name = "status")
-    private Boolean status;
+    private String status;
 
     @Column(name = "created_at")
     private Instant createdAt;
@@ -56,6 +56,15 @@ public class Message implements Serializable {
     @Column(name = "updated_at")
     private Instant updatedAt;
 
+    @OneToMany(mappedBy = "user")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "user", "product" }, allowSetters = true)
+    private Set<Comment> comments = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "user", "product", "customerOrder" }, allowSetters = true)
+    private Set<OrderProduct> orderProducts = new HashSet<>();
 
 
 }

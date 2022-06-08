@@ -28,7 +28,7 @@ public class ShoppingCardResource {
 
     private static final String ENTITY_NAME = "shoppingCard";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final ShoppingCardService shoppingCardService;

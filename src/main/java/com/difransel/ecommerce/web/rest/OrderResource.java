@@ -1,7 +1,7 @@
 package com.difransel.ecommerce.web.rest;
 
-import com.difransel.ecommerce.domain.Order;
-import com.difransel.ecommerce.repository.OrderRepository;
+import com.difransel.ecommerce.domain.CustomerOrder;
+import com.difransel.ecommerce.repository.CustomerOrderRepository;
 import com.difransel.ecommerce.service.OrderService;
 import com.difransel.ecommerce.web.rest.errors.BadRequestAlertException;
 import com.difransel.ecommerce.web.util.HeaderUtil;
@@ -19,7 +19,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * REST controller for managing {@link Order}.
+ * REST controller for managing {@link CustomerOrder}.
  */
 @RestController
 @RequestMapping("/api")
@@ -29,14 +29,14 @@ public class OrderResource {
 
     private static final String ENTITY_NAME = "order";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final OrderService orderService;
 
-    private final OrderRepository orderRepository;
+    private final CustomerOrderRepository orderRepository;
 
-    public OrderResource(OrderService orderService, OrderRepository orderRepository) {
+    public OrderResource(OrderService orderService, CustomerOrderRepository orderRepository) {
         this.orderService = orderService;
         this.orderRepository = orderRepository;
     }
@@ -49,12 +49,12 @@ public class OrderResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/orders")
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) throws URISyntaxException {
+    public ResponseEntity<CustomerOrder> createOrder(@RequestBody CustomerOrder order) throws URISyntaxException {
         log.debug("REST request to save Order : {}", order);
         if (order.getId() != null) {
             throw new BadRequestAlertException("A new order cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        Order result = orderService.save(order);
+        CustomerOrder result = orderService.save(order);
         return ResponseEntity
             .created(new URI("/api/orders/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -72,7 +72,7 @@ public class OrderResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/orders/{id}")
-    public ResponseEntity<Order> updateOrder(@PathVariable(value = "id", required = false) final Long id, @RequestBody Order order)
+    public ResponseEntity<CustomerOrder> updateOrder(@PathVariable(value = "id", required = false) final Long id, @RequestBody CustomerOrder order)
         throws URISyntaxException {
         log.debug("REST request to update Order : {}, {}", id, order);
         if (order.getId() == null) {
@@ -86,7 +86,7 @@ public class OrderResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
-        Order result = orderService.update(order);
+        CustomerOrder result = orderService.update(order);
         return ResponseEntity
             .ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, order.getId().toString()))
@@ -105,7 +105,7 @@ public class OrderResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/orders/{id}", consumes = { "application/json", "application/merge-patch+json" })
-    public ResponseEntity<Order> partialUpdateOrder(@PathVariable(value = "id", required = false) final Long id, @RequestBody Order order)
+    public ResponseEntity<CustomerOrder> partialUpdateOrder(@PathVariable(value = "id", required = false) final Long id, @RequestBody CustomerOrder order)
         throws URISyntaxException {
         log.debug("REST request to partial update Order partially : {}, {}", id, order);
         if (order.getId() == null) {
@@ -119,7 +119,7 @@ public class OrderResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
-        Optional<Order> result = orderService.partialUpdate(order);
+        Optional<CustomerOrder> result = orderService.partialUpdate(order);
 
         return ResponseUtil.wrapOrNotFound(
             result,
@@ -133,7 +133,7 @@ public class OrderResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of orders in body.
      */
     @GetMapping("/orders")
-    public List<Order> getAllOrders() {
+    public List<CustomerOrder> getAllOrders() {
         log.debug("REST request to get all Orders");
         return orderService.findAll();
     }
@@ -145,9 +145,9 @@ public class OrderResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the order, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/orders/{id}")
-    public ResponseEntity<Order> getOrder(@PathVariable Long id) {
+    public ResponseEntity<CustomerOrder> getOrder(@PathVariable Long id) {
         log.debug("REST request to get Order : {}", id);
-        Optional<Order> order = orderService.findOne(id);
+        Optional<CustomerOrder> order = orderService.findOne(id);
         return ResponseUtil.wrapOrNotFound(order);
     }
 

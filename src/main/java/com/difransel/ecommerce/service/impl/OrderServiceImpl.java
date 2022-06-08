@@ -1,7 +1,7 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.Order;
-import com.difransel.ecommerce.repository.OrderRepository;
+import com.difransel.ecommerce.domain.CustomerOrder;
+import com.difransel.ecommerce.repository.CustomerOrderRepository;
 import com.difransel.ecommerce.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Service Implementation for managing {@link Order}.
+ * Service Implementation for managing {@link CustomerOrder}.
  */
 @Service
 @Transactional
@@ -20,63 +20,63 @@ public class OrderServiceImpl implements OrderService {
 
     private final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
-    private final OrderRepository orderRepository;
+    private final CustomerOrderRepository orderRepository;
 
-    public OrderServiceImpl(OrderRepository orderRepository) {
+    public OrderServiceImpl(CustomerOrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
     @Override
-    public Order save(Order order) {
-        log.debug("Request to save Order : {}", order);
-        return orderRepository.save(order);
+    public CustomerOrder save(CustomerOrder customerOrder) {
+        log.debug("Request to save Order : {}", customerOrder);
+        return orderRepository.save(customerOrder);
     }
 
     @Override
-    public Order update(Order order) {
-        log.debug("Request to save Order : {}", order);
-        return orderRepository.save(order);
+    public CustomerOrder update(CustomerOrder customerOrder) {
+        log.debug("Request to save Order : {}", customerOrder);
+        return orderRepository.save(customerOrder);
     }
 
     @Override
-    public Optional<Order> partialUpdate(Order order) {
-        log.debug("Request to partially update Order : {}", order);
+    public Optional<CustomerOrder> partialUpdate(CustomerOrder customerOrder) {
+        log.debug("Request to partially update Order : {}", customerOrder);
 
         return orderRepository
-            .findById(order.getId())
+            .findById(customerOrder.getId())
             .map(existingOrder -> {
-                if (order.getName() != null) {
-                    existingOrder.setName(order.getName());
+                if (customerOrder.getName() != null) {
+                    existingOrder.setName(customerOrder.getName());
                 }
-                if (order.getSurname() != null) {
-                    existingOrder.setSurname(order.getSurname());
+                if (customerOrder.getSurname() != null) {
+                    existingOrder.setSurname(customerOrder.getSurname());
                 }
-                if (order.getEmail() != null) {
-                    existingOrder.setEmail(order.getEmail());
+                if (customerOrder.getEmail() != null) {
+                    existingOrder.setEmail(customerOrder.getEmail());
                 }
-                if (order.getAddress() != null) {
-                    existingOrder.setAddress(order.getAddress());
+                if (customerOrder.getAddress() != null) {
+                    existingOrder.setAddress(customerOrder.getAddress());
                 }
-                if (order.getPhone() != null) {
-                    existingOrder.setPhone(order.getPhone());
+                if (customerOrder.getPhone() != null) {
+                    existingOrder.setPhone(customerOrder.getPhone());
                 }
-                if (order.getTotal() != null) {
-                    existingOrder.setTotal(order.getTotal());
+                if (customerOrder.getTotal() != null) {
+                    existingOrder.setTotal(customerOrder.getTotal());
                 }
-                if (order.getStatus() != null) {
-                    existingOrder.setStatus(order.getStatus());
+                if (customerOrder.getStatus() != null) {
+                    existingOrder.setStatus(customerOrder.getStatus());
                 }
-                if (order.getNote() != null) {
-                    existingOrder.setNote(order.getNote());
+                if (customerOrder.getNote() != null) {
+                    existingOrder.setNote(customerOrder.getNote());
                 }
-                if (order.getIp() != null) {
-                    existingOrder.setIp(order.getIp());
+                if (customerOrder.getIp() != null) {
+                    existingOrder.setIp(customerOrder.getIp());
                 }
-                if (order.getCreatedAt() != null) {
-                    existingOrder.setCreatedAt(order.getCreatedAt());
+                if (customerOrder.getCreatedAt() != null) {
+                    existingOrder.setCreatedAt(customerOrder.getCreatedAt());
                 }
-                if (order.getUpdatedAt() != null) {
-                    existingOrder.setUpdatedAt(order.getUpdatedAt());
+                if (customerOrder.getUpdatedAt() != null) {
+                    existingOrder.setUpdatedAt(customerOrder.getUpdatedAt());
                 }
 
                 return existingOrder;
@@ -86,14 +86,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<Order> findAll() {
+    public List<CustomerOrder> findAll() {
         log.debug("Request to get all Orders");
         return orderRepository.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Order> findOne(Long id) {
+    public Optional<CustomerOrder> findOne(Long id) {
         log.debug("Request to get Order : {}", id);
         return orderRepository.findById(id);
     }

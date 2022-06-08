@@ -34,7 +34,7 @@ public class CommentResource {
 
     private static final String ENTITY_NAME = "comment";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final CommentService commentService;

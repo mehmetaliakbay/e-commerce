@@ -1,12 +1,12 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.UserA;
+import com.difransel.ecommerce.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Spring Data SQL repository for the UserA entity.
+ * Spring Data SQL repository for the User entity.
  */
 @SuppressWarnings("unused")
 @Repository
-public interface UserARepository extends JpaRepository<UserA, Long> {}
+public interface UserRepository extends JpaRepository<User, Long> {}

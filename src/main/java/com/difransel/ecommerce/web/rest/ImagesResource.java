@@ -29,7 +29,7 @@ public class ImagesResource {
 
     private static final String ENTITY_NAME = "images";
 
-//    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final ImagesService imagesService;
