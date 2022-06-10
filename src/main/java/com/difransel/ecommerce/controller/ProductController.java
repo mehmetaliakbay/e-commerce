@@ -78,8 +78,7 @@ public class ProductController {
     public ResponseEntity<Product> updateProduct(@PathVariable(value = "id", required = false) final Long id, @RequestBody Product product)
         throws URISyntaxException {
 
-        realtySaveService.updateRealty(realtyId, realtyUpdateRequest);
-
+return null;
 
 //
 //        log.debug("REST request to update Product : {}, {}", id, product);
