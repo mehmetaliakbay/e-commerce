@@ -1,7 +1,7 @@
 package com.difransel.ecommerce.service;
 
 
-import com.difransel.ecommerce.domain.OrderProduct;
+import com.difransel.ecommerce.model.OrderProduct;
 
 import java.util.List;
 import java.util.Optional;

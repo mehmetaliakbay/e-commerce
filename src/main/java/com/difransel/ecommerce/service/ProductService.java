@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service;
 
-import com.difransel.ecommerce.domain.Product;
+import com.difransel.ecommerce.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

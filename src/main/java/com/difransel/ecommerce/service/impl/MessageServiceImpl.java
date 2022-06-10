@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.Message;
+import com.difransel.ecommerce.model.Message;
 import com.difransel.ecommerce.repository.MessageRepository;
 import com.difransel.ecommerce.service.MessageService;
 import org.slf4j.Logger;

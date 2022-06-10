@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.ShoppingCard;
+import com.difransel.ecommerce.model.ShoppingCard;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.Message;
+import com.difransel.ecommerce.model.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

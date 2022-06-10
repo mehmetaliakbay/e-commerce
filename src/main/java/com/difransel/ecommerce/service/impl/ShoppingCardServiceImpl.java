@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.ShoppingCard;
+import com.difransel.ecommerce.model.ShoppingCard;
 import com.difransel.ecommerce.repository.ShoppingCardRepository;
 import com.difransel.ecommerce.service.ShoppingCardService;
 import org.slf4j.Logger;

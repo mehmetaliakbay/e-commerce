@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.Category;
+import com.difransel.ecommerce.model.Category;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

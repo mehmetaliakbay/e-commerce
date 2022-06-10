@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.Images;
+import com.difransel.ecommerce.model.Images;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

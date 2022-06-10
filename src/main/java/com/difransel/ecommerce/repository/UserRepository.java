@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.User;
+import com.difransel.ecommerce.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

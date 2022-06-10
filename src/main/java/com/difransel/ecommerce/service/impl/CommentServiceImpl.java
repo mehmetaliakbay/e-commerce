@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.Comment;
+import com.difransel.ecommerce.model.Comment;
 import com.difransel.ecommerce.repository.CommentRepository;
 import com.difransel.ecommerce.service.CommentService;
 import org.slf4j.Logger;

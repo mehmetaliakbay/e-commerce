@@ -1,7 +1,7 @@
 package com.difransel.ecommerce.service;
 
 
-import com.difransel.ecommerce.domain.User;
+import com.difransel.ecommerce.model.User;
 
 import java.util.List;
 import java.util.Optional;

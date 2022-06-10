@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.Setting;
+import com.difransel.ecommerce.model.Setting;
 import com.difransel.ecommerce.repository.SettingRepository;
 import com.difransel.ecommerce.service.SettingService;
 import org.slf4j.Logger;

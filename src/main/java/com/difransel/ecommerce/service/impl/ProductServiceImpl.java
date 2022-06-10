@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.Product;
+import com.difransel.ecommerce.model.Product;
 import com.difransel.ecommerce.repository.ProductRepository;
 import com.difransel.ecommerce.service.ProductService;
 import org.slf4j.Logger;

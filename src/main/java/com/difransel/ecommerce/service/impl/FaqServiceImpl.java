@@ -1,6 +1,6 @@
 package com.difransel.ecommerce.service.impl;
 
-import com.difransel.ecommerce.domain.Faq;
+import com.difransel.ecommerce.model.Faq;
 import com.difransel.ecommerce.repository.FaqRepository;
 import com.difransel.ecommerce.service.FaqService;
 import org.slf4j.Logger;

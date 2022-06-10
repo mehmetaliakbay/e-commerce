@@ -1,7 +1,7 @@
 package com.difransel.ecommerce.service;
 
 
-import com.difransel.ecommerce.domain.Images;
+import com.difransel.ecommerce.model.Images;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,13 +1,11 @@
 package com.difransel.ecommerce.repository;
 
-import com.difransel.ecommerce.domain.Category;
-import org.hibernate.annotations.QueryHints;
+import com.difransel.ecommerce.model.Category;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
